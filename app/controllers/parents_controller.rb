@@ -17,31 +17,24 @@ class ParentsController < ApplicationController
 
   def create
     @parent = Parent.new(parent_params)
-
-    respond_to do |format|
-      if @parent.save
-        redirect_to @parent, notice: 'Parent was successfully created.'
-      else
-        render :new
-      end
+    if @parent.save
+      redirect_to @parent, notice: 'Parent was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @parent.update(parent_params)
-        redirect_to @parent, notice: 'Parent was successfully updated.'
-      else
-        render :edit
-      end
+    if @parent.update(parent_params)
+      redirect_to @parent, notice: 'Parent was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @parent.destroy
-    respond_to do |format|
-      redirect_to parents_url, notice: 'Parent was successfully destroyed.'
-    end
+    redirect_to parents_url, notice: 'Parent was successfully destroyed.'
   end
 
   private
