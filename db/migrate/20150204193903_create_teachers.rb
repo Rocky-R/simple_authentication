@@ -3,8 +3,7 @@ class CreateTeachers < ActiveRecord::Migration
     create_table :teachers do |t|
       t.string :email
       t.string :name
-      t.string :password_hash
-      t.string :password_salt
+      t.string :password_digest
 
       t.timestamps null: false
     end
