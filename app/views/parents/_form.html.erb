@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :teacher_id %><br>
-    <%= f.number_field :teacher_id %>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name, :include_blank=> true %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
