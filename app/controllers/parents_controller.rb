@@ -3,7 +3,7 @@ class ParentsController < ApplicationController
 
   def index
     @parents = Parent.where(teacher_id: session[:teacher_id]).all
-    @teacher = Teacher.where(teacher_id: session[:teacher_id])
+    @teacher = Teacher.find(session[:teacher_id])
   end
 
   def show
