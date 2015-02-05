@@ -1,6 +1,6 @@
 # simple_authentication
 
-Navigate to:
+Navigate to: https://peaceful-savannah-5312.herokuapp.com/
 
 Log in or register a teacher.
 
