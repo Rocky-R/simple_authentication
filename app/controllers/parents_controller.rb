@@ -2,7 +2,8 @@ class ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
   def index
-    @parents = Parent.all
+    @parents = Parent.where(teacher_id: session[:teacher_id]).all
+    @teacher = Teacher.where(teacher_id: session[:teacher_id])
   end
 
   def show
